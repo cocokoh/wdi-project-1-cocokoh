@@ -1,42 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="assets/css/stylesheet.css">
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <title>Uncheck Checked</title>
+    <h1>Uncheck All Boxes</h1>
 </head>
 <body>
-  <div class='container'>
-<h1> Tic Tac Toe </h1>
+    <p>
+    Uncheck all the checked boxes to win! Start by clicking any box you want to!</p>
+  <center>
+  <form name=lightsform>
+  <table colspec="l20 l20 l20 l20 l20" border=1>
+  <tr>
+    <td><input name = 'thing' id ='thing' type=checkbox value=0 onClick="check(value)"/><label for="thing"></label></td>
+    <td><input name = 'thing1' id = 'thing1' type=checkbox value=1 onClick="check(value)"/><label for="thing1"></label></td>
+    <td><input name = 'thing2' id = 'thing2' type=checkbox value=2 onClick="check(value)"/><label for="thing2"></label></td>
+    <td><input name = 'thing3' id ='thing3' type=checkbox value=3 onClick="check(value)"/><label for="thing3"></label></td>
+    <td><input name = 'thing4' id ='thing4' type=checkbox value=4 onClick="check(value)"/><label for="thing4"></label></td>
+    <td><input name = 'thing5' id ='thing5' type=checkbox value=5 onClick="check(value)"/><label for="thing5"></label></td>
+  </tr>
+  <tr>
+    <td><input name = 'thing6' id ='thing6' type=checkbox value=6 onClick="check(value)"/><label for="thing6"></label></td>
+    <td><input name = 'thing7' id = 'thing7' type=checkbox value=7 onClick="check(value)"/><label for="thing7"></label></td>
+    <td><input name = 'thing8' id = 'thing8' type=checkbox value=8 onClick="check(value)"/><label for="thing8"></label></td>
+    <td><input name = 'thing9' id ='thing9' type=checkbox value=9 onClick="check(value)"/><label for="thing9"></label></td>
+    <td><input name = 'thing10' id ='thing10' type=checkbox value=10 onClick="check(value)"/><label for="thing10"></label></td>
+    <td><input name = 'thing11' id ='thing11' type=checkbox value=11 onClick="check(value)"/><label for="thing11"></label></td>
+  </tr>
+  <tr>
+    <td><input name = 'thing12' id ='thing12' type=checkbox value=12 onClick="check(value)"/><label for="thing12"></label></td>
+    <td><input name = 'thing13' id = 'thing13' type=checkbox value=13 onClick="check(value)"/><label for="thing13"></label></td>
+    <td><input name = 'thing14' id = 'thing14' type=checkbox value=14 onClick="check(value)"/><label for="thing14"></label></td>
+    <td><input name = 'thing15' id ='thing15' type=checkbox value=15 onClick="check(value)"/><label for="thing15"></label></td>
+    <td><input name = 'thing16' id ='thing16' type=checkbox value=16 onClick="check(value)"/><label for="thing16"></label></td>
+    <td><input name = 'thing17' id ='thing17' type=checkbox value=17 onClick="check(value)"/><label for="thing17"></label></td>
+  </tr>
+  <tr>
+    <td><input name = 'thing18' id ='thing18' type=checkbox value=18 onClick="check(value)"/><label for="thing18"></label></td>
+    <td><input name = 'thing19' id = 'thing19' type=checkbox value=19 onClick="check(value)"/><label for="thing19"></label></td>
+    <td><input name = 'thing20' id = 'thing20' type=checkbox value=20 onClick="check(value)"/><label for="thing20"></label></td>
+    <td><input name = 'thing21' id ='thing21' type=checkbox value=21 onClick="check(value)"/><label for="thing21"></label></td>
+    <td><input name = 'thing22' id ='thing22' type=checkbox value=22 onClick="check(value)"/><label for="thing22"></label></td>
+    <td><input name = 'thing23' id ='thing23' type=checkbox value=23 onClick="check(value)"/><label for="thing23"></label></td>
+  </tr>
+  <tr>
+    <td><input name = 'thing24' id = 'thing24' type=checkbox value=24 onClick="check(value)"/><label for="thing24"></label></td>
+    <td><input name = 'thing25' id = 'thing25' type=checkbox value=25 onClick="check(value)"/><label for="thing25"></label></td>
+    <td><input name = 'thing26' id ='thing26' type=checkbox value=26 onClick="check(value)"/><label for="thing26"></label></td>
+    <td><input name = 'thing27' id ='thing27' type=checkbox value=27 onClick="check(value)"/><label for="thing27"></label></td>
+    <td><input name = 'thing28' id ='thing28' type=checkbox value=28 onClick="check(value)"/><label for="thing28"></label></td>
+    <td><input name = 'thing29' id ='thing29' type=checkbox value=29 onClick="check(value)"/><label for="thing29"></label></td>
+  </tr>
+  <tr>
+    <td><input name = 'thing30' id = 'thing30' type=checkbox value=30 onClick="check(value)"/><label for="thing30"></label></td>
+    <td><input name = 'thing31' id = 'thing31' type=checkbox value=31 onClick="check(value)"/><label for="thing31"></label></td>
+    <td><input name = 'thing32' id ='thing32' type=checkbox value=32 onClick="check(value)"/><label for="thing32"></label></td>
+    <td><input name = 'thing33' id ='thing33' type=checkbox value=33 onClick="check(value)"/><label for="thing33"></label></td>
+    <td><input name = 'thing34' id ='thing34' type=checkbox value=34 onClick="check(value)"/><label for="thing34"></label></td>
+    <td><input name = 'thing35' id ='thing35' type=checkbox value=35 onClick="check(value)"/><label for="thing35"></label></td>
+  </tr>
+  </table>
+  <tr>
+  <td><a href = '#' onclick="level1()">Level 1</a></td>
+  <td><a href = '#' onclick="level2()">Level 2</a></td>
+  <td><a href="javascript:level3()">Level 3</a></td>
+  <td><a href="javascript:level4()">Level 4</a></td>
+  </tr>
+  <tr>
 
-<div class='grid'>
-<button id='1' class='box'>
-</button>
-<button id='2' class='box'>
-</button>
-<button id='3' class='box'>
-</button>
-<button id='4' class='box'>
-</button>
-<button id='5' class='box'>
-</button>
-<button id='6' class='box'>
-</button>
-<button id='7' class='box'>
-</button>
-<button id='8' class='box'>
-</button>
-<button id='9' class='box'>
-</button>
-
-<button id='restart'>Restart</button>
-</div>
-</div>
+  <td><input type="reset" value="clear"></td>
+  </tr>
+  <br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- <script src="./homework.js"></script> -->
-<script src="assets/js/script.js"></script>
-
+<script src='assets/js/script.js' charset='utf-8'></script>
 </body>
-
 </html>
