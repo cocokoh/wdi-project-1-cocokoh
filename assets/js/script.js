@@ -1,77 +1,67 @@
+// alert('START GAME')
+var data = []
+var table = document.getElementById('mytable')
+var inputs = table.getElementsByTagName('input')
+for (var z=0; z < inputs.length; z++)
+  data.push(inputs[z]);
+
 function fillall () {
   for (var i = 0; i < 36; i++) {
-    document.lightsform.elements[i].checked = 1
+    data[i].checked = 1
   }
 }
 function clearall () {
   for (var i = 0; i < 36; i++) {
-    document.lightsform.elements[i].checked = 0
+    data[i].checked = 0
   }
 }
 // $buttons.on('click',
-function level1 () {
+var l1 = [2,8,12,13,15,16,20,26]
+level1(l1)
+function level1 (l1) {
   clearall()
-  document.lightsform.elements[2].checked = 1
-  document.lightsform.elements[8].checked = 1
-  document.lightsform.elements[12].checked = 1
-  document.lightsform.elements[13].checked = 1
-  document.lightsform.elements[15].checked = 1
-  document.lightsform.elements[16].checked = 1
-  document.lightsform.elements[20].checked = 1
-  document.lightsform.elements[26].checked = 1
-}
-// )
-function level2 () {
+  for (var i = 0; i<l1.length; i++){
+    var x = l1[i]
+    data[x].checked = 1
+  }}
+
+$('#l2').on('click', function (){
+var l2 = [12,16,17,18,20,34,2,7]
   clearall()
-  document.lightsform.elements[12].checked = 1
-  document.lightsform.elements[16].checked = 1
-  document.lightsform.elements[17].checked = 1
-  document.lightsform.elements[18].checked = 1
-  document.lightsform.elements[20].checked = 1
-  document.lightsform.elements[21].checked = 1
-  document.lightsform.elements[22].checked = 1
-  document.lightsform.elements[23].checked = 1
-  document.lightsform.elements[24].checked = 1
-}
-function level3 () {
-  fillall()
-  document.lightsform.elements[4].checked = 0
-  document.lightsform.elements[6].checked = 0
-  document.lightsform.elements[7].checked = 0
-  document.lightsform.elements[8].checked = 0
-  document.lightsform.elements[11].checked = 0
-  document.lightsform.elements[12].checked = 0
-  document.lightsform.elements[13].checked = 0
-  document.lightsform.elements[16].checked = 0
-  document.lightsform.elements[17].checked = 0
-  document.lightsform.elements[18].checked = 0
-  document.lightsform.elements[24].checked = 0
-}
-function level4 () {
+  for (var i = 0; i<l2.length; i++){
+    var y = l2[i]
+    data[y].checked = 1
+  }})
+
+$('#l3').on('click', function (){
+var l3 = [6,7,20,34,21,35]
   clearall()
-  document.lightsform.elements[2].checked = 1
-  document.lightsform.elements[6].checked = 1
-  document.lightsform.elements[8].checked = 1
-  document.lightsform.elements[10].checked = 1
-  document.lightsform.elements[12].checked = 1
-  document.lightsform.elements[14].checked = 1
-  document.lightsform.elements[16].checked = 1
-  document.lightsform.elements[18].checked = 1
-  document.lightsform.elements[22].checked = 1
-}
-function random () {
+  for (var i = 0; i<l3.length; i++){
+    var z = l3[i]
+    data[z].checked = 1
+  }})
+
+$('#l4').on('click', function (){
+var l4 = [2,4,6,8,10,28,30,32,34]
   clearall()
-document.lightsform.elements[Math.floor(Math.random() *10)].checked = 1
-document.lightsform.elements[Math.floor(Math.random() *20)].checked = 1
-document.lightsform.elements[Math.floor(Math.random() *32)].checked = 1
-document.lightsform.elements[Math.floor(Math.random() *30)].checked = 1
-document.lightsform.elements[Math.floor(Math.random() *28)].checked = 1
-document.lightsform.elements[Math.floor(Math.random() *36)].checked = 1
-}
+  for (var i = 0; i<l4.length; i++){
+    var t = l4[i]
+    data[t].checked = 1
+  }})
+
+$('#random').on('click', function (){
+  clearall()
+data[Math.floor(Math.random() *10)].checked = 1
+data[Math.floor(Math.random() *20)].checked = 1
+data[Math.floor(Math.random() *32)].checked = 1
+data[Math.floor(Math.random() *30)].checked = 1
+data[Math.floor(Math.random() *28)].checked = 1
+data[Math.floor(Math.random() *36)].checked = 1
+})
 function checkall () {
   var win = 1
   for (var i = 0; i < 36; i++) {
-    if (document.lightsform.elements[i].checked == 1) {
+    if (data[i].checked == 1) {
       win = 0
     }
   }
@@ -79,7 +69,7 @@ function checkall () {
     alert('\nYou Won!!\n')
   }
 }
-function check (value) {
+function check(value) {
   colLength = 6
   w = 1
   rowNumber = parseInt(value / colLength) + w
@@ -114,25 +104,33 @@ function check (value) {
   }
   if (value == 6) leftAdd = 36 // correction for strange bug
 
-  if (document.lightsform.elements[bottomAdd].checked == 1) {
-    document.lightsform.elements[bottomAdd].checked = 0
+  if (bottomAdd !== 36) {
+  if (data[bottomAdd].checked == 1) {
+    data[bottomAdd].checked = 0
   } else {
-    document.lightsform.elements[bottomAdd].checked = 1
+    data[bottomAdd].checked = 1
+    }
   }
-  if (document.lightsform.elements[topAdd].checked == 1) {
-    document.lightsform.elements[topAdd].checked = 0
-  } else {
-    document.lightsform.elements[topAdd].checked = 1
+  if (topAdd !== 36) {
+    if (data[topAdd].checked == 1) {
+      data[topAdd].checked = 0
+    } else {
+      data[topAdd].checked = 1
+    }
   }
-  if (document.lightsform.elements[rightAdd].checked == 1) {
-    document.lightsform.elements[rightAdd].checked = 0
-  } else {
-    document.lightsform.elements[rightAdd].checked = 1
+  if (rightAdd !== 36) {
+    if (data[rightAdd].checked == 1) {
+      data[rightAdd].checked = 0
+    } else {
+      data[rightAdd].checked = 1
+    }
   }
-  if (document.lightsform.elements[leftAdd].checked == 1) {
-    document.lightsform.elements[leftAdd].checked = 0
-  } else {
-    document.lightsform.elements[leftAdd].checked = 1
+  if (leftAdd !== 36) {
+    if (data[leftAdd].checked == 1) {
+      data[leftAdd].checked = 0
+    } else {
+      data[leftAdd].checked = 1
+    }
   }
   checkall()
 }

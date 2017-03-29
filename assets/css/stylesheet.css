@@ -1,19 +1,40 @@
 /*html {
     height: 100%;
 }*/
-body {
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+    to { background-position: 400% 0; }
+    }
+
+    body	{
+    	width: 1400px;
+    	height: 400px;
+    	background-image: url(../honey.png);
+    	background-position: 0px 10px;
+    	background-repeat: repeat-x;
+      /*background-attachment: fixed;*/
+    	animation: animatedBackground 10s linear infinite;
+    }
+/*body {
   height: 100%;
-  text-align: center;
+  text-align: center;*/
   /*margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;*/
-  background-image: url('../honey.png');
+  /*background-image: url('../honey.png');
+  background-repeat: no-repeat;
   background-size: cover;
-  
+  background-attachment: fixed;
 
+
+}*/
+
+li {
+  display: block;
 }
 
-h1 {
+h2 {
   text-align: center;
   font-style: bold;
   font-size: 50px;
@@ -54,3 +75,18 @@ input[type=checkbox] {
            display:inline-block;
            padding: 0 0 0 0px;
        }
+
+
+.mainDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8%;
+
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+}
