@@ -1,4 +1,4 @@
-alert('START GAME')
+// alert('START GAME')
 
 // getting the info on boxes from HTML
 var data = []
