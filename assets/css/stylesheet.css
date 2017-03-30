@@ -10,11 +10,11 @@
     body	{
     	width: 1400px;
     	height: 400px;
-    	background-image: url(../honey.png);
+    	background-image: url(../images/honey.png);
     	background-position: 0px 10px;
     	background-repeat: repeat-x;
       /*background-attachment: fixed;*/
-    	animation: animatedBackground 10s linear infinite;
+    	animation: animatedBackground 90s linear infinite;
     }
 /*body {
   height: 100%;
@@ -68,7 +68,7 @@ input[type=checkbox] {
 
       input[type=checkbox]:checked + label
        {
-           background-image: url(../tiggger.png);
+           background-image: url('../images/tiggger.png');
            background-size: cover;
            height: 37px;
            width: 57px;

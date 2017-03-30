@@ -1,29 +1,38 @@
-// alert('START GAME')
+alert('START GAME')
+
+// getting the info on boxes from HTML
 var data = []
 var table = document.getElementById('mytable')
 var inputs = table.getElementsByTagName('input')
 for (var z=0; z < inputs.length; z++)
   data.push(inputs[z]);
 
-function fillall () {
-  for (var i = 0; i < 36; i++) {
-    data[i].checked = 1
+// setting a function similar to level1() so that the table displays level1 settings upon entering the site.
+function ll1 (l1) {
+var l1 = [2,8,12,13,15,16,20,26]
+  clearall()
+  for (var i = 0; i<l1.length; i++){
+    var x = l1[i]
+    data[x].checked = 1
   }
 }
+  ll1()
+
+// function to uncheck all boxes when a button is clicked so that the table would be refreshed.
 function clearall () {
   for (var i = 0; i < 36; i++) {
     data[i].checked = 0
   }
 }
-// $buttons.on('click',
+
+// button functions. numbers passed in the array for the default boxes to be selected.
+$('#l1').on('click', function(){
 var l1 = [2,8,12,13,15,16,20,26]
-level1(l1)
-function level1 (l1) {
   clearall()
   for (var i = 0; i<l1.length; i++){
     var x = l1[i]
     data[x].checked = 1
-  }}
+  }})
 
 $('#l2').on('click', function (){
 var l2 = [12,16,17,18,20,34,2,7]
@@ -58,6 +67,8 @@ data[Math.floor(Math.random() *30)].checked = 1
 data[Math.floor(Math.random() *28)].checked = 1
 data[Math.floor(Math.random() *36)].checked = 1
 })
+
+// winning function
 function checkall () {
   var win = 1
   for (var i = 0; i < 36; i++) {
@@ -69,6 +80,8 @@ function checkall () {
     alert('\nYou Won!!\n')
   }
 }
+
+// function that gets called when a box is checked. Refer to HTML for code that calls this function.
 function check(value) {
   colLength = 6
   w = 1
@@ -76,11 +89,15 @@ function check(value) {
   if (isNaN(rowNumber)) {
     rowNumber = 1
   }
+
+  // defining the calculation for the boxes to be selected
   intv = parseInt(value)
   bottomAdd = eval(intv + colLength)
   topAdd = eval(intv - colLength)
   rightAdd = eval(intv + w)
   leftAdd = eval(intv - w)
+
+  // setting calculations to out of range
   if (bottomAdd < 0 || bottomAdd > 35) {
     bottomAdd = 36
   }
@@ -93,6 +110,7 @@ function check(value) {
   if (leftAdd < 0 || leftAdd > 35) {
     leftAdd = 36
   }
+  // to prevent clicks on far left and right columns from checking out on other rows
   rowNum1 = (parseInt(rightAdd / colLength) + w)
   rowNum2 = (parseInt(leftAdd / colLength) + w)
   kv = rowNumber
@@ -102,8 +120,9 @@ function check(value) {
   if (rowNum2 != kv) {
     leftAdd = 36
   }
-  if (value == 6) leftAdd = 36 // correction for strange bug
+  // if (value == 6) leftAdd = 36 // correction for strange bug
 
+  //code for checking and unchecking boxes
   if (bottomAdd !== 36) {
   if (data[bottomAdd].checked == 1) {
     data[bottomAdd].checked = 0
@@ -132,5 +151,6 @@ function check(value) {
       data[leftAdd].checked = 1
     }
   }
+  // to check winning function~
   checkall()
 }
